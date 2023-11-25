@@ -1,0 +1,20 @@
+.letterAnimation {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: buildUp 0.5s forwards;
+
+  @keyframes buildUp {
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+// Usamos un bucle para generar los delays para cada letra
+@for $i from 1 through 10 {
+  .letter-#{$i} {
+    animation-delay: 0.1s * $i;
+  }
+}

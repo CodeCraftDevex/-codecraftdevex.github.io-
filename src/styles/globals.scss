@@ -1,0 +1,70 @@
+@import "variables";
+body {
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  cursor: url("data:image/svg+xml;charset=utf-8,#{$transparentPixelSvg}"), none !important;
+}
+
+a:-webkit-any-link,
+a:any-link,
+input[type="checkbox"],
+a {
+  cursor: url("data:image/svg+xml;charset=utf-8,#{$transparentPixelSvg}"), none !important;
+
+  &:hover,
+  &:visited,
+  &.text-white {
+    cursor: url("data:image/svg+xml;charset=utf-8,#{$transparentPixelSvg}"),
+      none !important;
+  }
+}
+
+[type="button"]:not(:disabled),
+[type="reset"]:not(:disabled),
+[type="submit"]:not(:disabled),
+button:not(:disabled) {
+  cursor: url("data:image/svg+xml;charset=utf-8,#{$transparentPixelSvg}"), none !important;
+}
+
+/* Custom default button */
+.btn-light {
+  color: #333;
+  text-shadow: none; // Prevent inheritance from `body`
+
+  &:hover,
+  &:focus {
+    color: #333;
+    cursor: url("data:image/svg+xml;charset=utf-8,#{$transparentPixelSvg}"),
+      none !important;
+  }
+}
+
+/*
+  * Header
+  */
+
+.nav-masthead {
+  .nav-link {
+    color: $color-principal !important;
+    cursor: url("data:image/svg+xml;charset=utf-8,#{$transparentPixelSvg}"),
+      none !important;
+
+    &:hover,
+    &:focus {
+      cursor: url("data:image/svg+xml;charset=utf-8,#{$transparentPixelSvg}"),
+        none !important;
+    }
+
+    & + .nav-link {
+      margin-left: 1rem;
+    }
+
+    &:focus {
+      border-bottom-color: $color-principal !important;
+    }
+  }
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 3px;
+}

@@ -1,0 +1,27 @@
+@keyframes resize {
+  0%,
+  100% {
+    transform: scale(1); // Tamaño normal
+  }
+
+  50% {
+    transform: scale(1.2); // Tamaño aumentado
+  }
+}
+.circleFollower {
+  transition: all 0.3s ease-out;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+  animation: none;
+  width: 30px;
+  height: 30px;
+
+  &.hovering {
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0.2),
+      rgba(0, 0, 0, 0.2)
+    );
+  }
+}

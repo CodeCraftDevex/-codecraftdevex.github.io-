@@ -1,40 +1,48 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portafolio Personal - Desarrollado con React, React Bootstrap y TypeScript
 
-## Getting Started
+¡Saludos y bienvenidos a mi página de portafolio! 🚀
 
-First, run the development server:
+Aquí, te invito a explorar una colección de mis trabajos y proyectos destacados. Esta plataforma ha sido creada utilizando las potentes tecnologías de React para la interfaz, React Bootstrap para un diseño moderno y adaptable, y TypeScript para un desarrollo más robusto y eficiente.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tecnologías Utilizadas
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Flutter:** Utilizo el framework Flutter para desarrollar aplicaciones móviles multiplataforma. La capacidad de Flutter para crear interfaces atractivas y fluidas en Android y iOS me permite ofrecer experiencias consistentes y de alta calidad.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Proyectos Destacados
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+A continuación, encontrarás algunos de los proyectos en los que he estado trabajando:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+| Proyecto        | Descripción                                                                                                                                                                                                             | Tecnologías |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| EfficientEscape | Planificador de vacaciones con algoritmos adaptativos y calendario de festivos regionales para una gestión sencilla y eficaz.                                                                                           | Flutter     |
+| BCAA calculator | Calculadora de BCAA en Flutter con base de datos SQLite. Gestiona la proporción de Leucina, Isoleucina y Valina por alimento consumido.                                                                                 | Flutter     |
+| PotPlot         | Aplicación en Flutter para la gestión eficiente de huertos urbanos. Administra parcelas, hortalizas y optimiza la distribución de cultivos según dimensiones y asociaciones. Incluye análisis de clima y fases lunares. | Flutter     |
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Características Futuras 🌟
 
-## Learn More
+Estoy trabajando continuamente para mejorar y expandir las funcionalidades de mi portafolio. Aquí algunas de las características que planeo implementar próximamente:
 
-To learn more about Next.js, take a look at the following resources:
+- **Multilenguaje/Internacionalización:** Para hacer mi portafolio accesible a un público más amplio, estoy en el proceso de añadir soporte multilenguaje. Esto permitirá a los visitantes experimentar el contenido en su idioma nativo o preferido.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Galería de Capturas de Flutter:** Para brindarte una mejor perspectiva de mis aplicaciones en Flutter, planeo integrar una galería con capturas de pantalla. Esta contará con un slider para navegar cómodamente entre las imágenes y obtener una vista previa de la experiencia del usuario en mis aplicaciones.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Cierre
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+¡Gracias por visitar mi portafolio! Si estás interesado en colaborar o tienes alguna pregunta, no dudes en ponerse en contacto. ¡Hasta pronto!
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Recursos
+
+Inicialmente, este proyecto utilizaba React y Vite como tecnologías principales. Sin embargo, posteriormente se realizó un cambio a Next.js para aprovechar las ventajas de la Generación de Sitio Estático (SSG) ofrecida por Next.js. 
+
+Los recursos y tecnologías utilizadas en este proyecto ahora incluyen:
+
+- Next.js
+- TypeScript
+- React-Bootstrap
+- SCSS
+
+
+Este cambio se hizo con el objetivo de mejorar la eficiencia, la velocidad de carga y la optimización de SEO del sitio web, alineándolo con las últimas mejores prácticas del sector. Si tienes alguna pregunta o necesitas más información sobre esta transición, no dudes en ponerte en contacto conmigo.
+
