@@ -9,13 +9,13 @@ function FooterExample() {
           <Col>
             <p>
               Este sitio web ha sido creado utilizando{" "}
-              <Link href="https://reactjs.org/" passHref>
+              <Link href="https://reactjs.org/">
                 {/* <a className="text-white" style={{ cursor: "none" }}> */}
                 React
                 {/* </a> */}
               </Link>{" "}
               y{" "}
-              <Link href="https://react-bootstrap.github.io/" passHref>
+              <Link href="https://react-bootstrap.github.io/">
                 {/* <a className="text-white" style={{ cursor: "none" }}> */}
                 React-Bootstrap
                 {/* </a> */}

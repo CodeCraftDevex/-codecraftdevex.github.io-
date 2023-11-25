@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <>
       <FollowerComponent />
-      {/* <Header /> */}
+      <Header />
       <main>
         <Container className="px-3">
           <AnimatePresence mode="wait">

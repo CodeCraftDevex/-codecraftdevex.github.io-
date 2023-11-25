@@ -19,7 +19,7 @@ export default function Home() {
           flutter y desarrollo web, y próximamente en el campo de la blockchain.
         </p>
         <p className="lead">
-          <Link href="/proyectos" passHref>
+          <Link href="/proyectos">
             <CustomButton>Proyectos</CustomButton>
           </Link>
         </p>

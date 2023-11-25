@@ -1,6 +1,4 @@
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Container from "react-bootstrap/Container";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import Link from "next/link";
 import styles from "./Header.module.scss";
 function Header() {
@@ -8,7 +6,7 @@ function Header() {
     <header className={styles.mbAuto}>
       <Navbar bg="transparent" expand="lg" className={styles.navMasthead}>
         <Container>
-          <Link href="/" passHref>
+          <Link href="/">
             <Navbar.Brand
               style={{ fontSize: "1.8rem", color: "white", cursor: "none" }}
               className="fw-bold"
@@ -19,7 +17,6 @@ function Header() {
               <span className={styles.letterAnimation + " " + styles.letter2}>
                 o
               </span>
-              {/* ...otros span */}
               <span className={styles.letterAnimation + " " + styles.letter10}>
                 o
               </span>
@@ -33,20 +30,20 @@ function Header() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Link href="/proyectos" passHref>
-                <Nav.Link
+                {/* <a
                   className={styles.navLink + " fw-bold py-1 px-0"}
                   style={{ cursor: "none" }}
-                >
-                  Proyectos
-                </Nav.Link>
+                > */}
+                Proyectos
+                {/* </a> */}
               </Link>
               <Link href="/contacto" passHref>
-                <Nav.Link
+                {/* <a
                   className={styles.navLink + " fw-bold py-1 px-0"}
                   style={{ cursor: "none" }}
-                >
-                  Contacto
-                </Nav.Link>
+                > */}
+                Contacto
+                {/* </a> */}
               </Link>
             </Nav>
           </Navbar.Collapse>
