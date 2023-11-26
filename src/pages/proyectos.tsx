@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-
 import { Container, Row, Col, Nav, Image } from "react-bootstrap";
 import { projectsContent, projectsLogo } from "./listado_proyectos";
 import PDFIntercalator from "./PDFIntercalator";
 import useWindowSize from "../hooks/useWindowSize";
-import "./Proyectos.scss";
+import styles from "./Proyectos.module.scss";
 
 const Sidebar: React.FC = () => {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
@@ -16,7 +15,7 @@ const Sidebar: React.FC = () => {
   };
 
   return (
-    <Nav className="sidebar flex-column">
+    <Nav className={styles.sidebar + " flex-column"}>
       {projectsLogo.map((project) => (
         <Nav.Link
           href={`#${project.id}`}
@@ -27,15 +26,19 @@ const Sidebar: React.FC = () => {
             src={project.image}
             alt={project.title}
             fluid
-            className={`project-image ${
-              selectedProjectId === project.id ? "selected" : ""
+            className={`${styles.projectImage} ${
+              selectedProjectId === project.id
+                ? styles.projectImageSelected
+                : ""
             }`}
             draggable="false"
           />
           {selectedProjectId === project.id && (
             <h3
-              className={`project-title ${
-                selectedProjectId === project.id ? "project-title-visible" : ""
+              className={`${styles.projectTitle} ${
+                selectedProjectId === project.id
+                  ? styles.projectTitleVisible
+                  : ""
               }`}
             >
               {project.title}
@@ -50,12 +53,13 @@ const Sidebar: React.FC = () => {
 const Proyectos: React.FC = () => {
   const { width } = useWindowSize();
   const isMobile = width !== undefined && width <= 768;
+
   return (
     <main>
       <Container className="px-3" fluid>
         <Row>
           {!isMobile && (
-            <Col md={2} className="sidebar-col">
+            <Col md={2} className={styles.sidebarCol}>
               <Sidebar />
             </Col>
           )}
@@ -64,20 +68,18 @@ const Proyectos: React.FC = () => {
               <Col md={12}>
                 <PDFIntercalator />
               </Col>
-              <hr className="proyecto-divider" />
+              <hr className={styles.proyectoDivider} />
             </Row>
             {projectsContent.map((project) => (
-              <Row className="proyecto" id={project.id}>
+              <Row className="proyecto" id={project.id} key={project.id}>
                 <Col md={7}>
-                  <h2 className="proyecto-heading fw-normal lh-1">
-                    {project.title}
-                  </h2>
+                  <h2 className="fw-normal lh-1">{project.title}</h2>
                   <p className="lead">{project.description}</p>
                 </Col>
                 <Col md={5}>
-                  <Image src={project.image} alt="Huerto" fluid />
+                  <Image src={project.image} alt={project.title} fluid />
                 </Col>
-                <hr className="proyecto-divider" />
+                <hr className={styles.proyectoDivider} />
               </Row>
             ))}
           </Col>

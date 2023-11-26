@@ -9,16 +9,15 @@ function FooterExample() {
           <Col>
             <p>
               Este sitio web ha sido creado utilizando{" "}
-              <Link href="https://reactjs.org/">
-                {/* <a className="text-white" style={{ cursor: "none" }}> */}
-                React
-                {/* </a> */}
+              <Link href="https://reactjs.org/" className="text-white">
+                Next.js
               </Link>{" "}
               y{" "}
-              <Link href="https://react-bootstrap.github.io/">
-                {/* <a className="text-white" style={{ cursor: "none" }}> */}
+              <Link
+                href="https://react-bootstrap.github.io/"
+                className="text-white"
+              >
                 React-Bootstrap
-                {/* </a> */}
               </Link>
             </p>
           </Col>

@@ -9,7 +9,7 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         </Head>
-        <body className="d-flex h-100 text-center text-bg-dark">
+        <body className="d-flex justify-content-center  h-100 text-center text-bg-dark">
           <Main />
           <NextScript />
         </body>

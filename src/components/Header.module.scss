@@ -14,7 +14,7 @@
 
 // Usamos un bucle para generar los delays para cada letra
 @for $i from 1 through 10 {
-  .letter-#{$i} {
+  .letter#{$i} {
     animation-delay: 0.1s * $i;
   }
 }

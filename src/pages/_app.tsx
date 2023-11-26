@@ -1,14 +1,17 @@
 import { AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Container from "react-bootstrap/Container";
-import FollowerComponent from "../components/Follower";
 import PageTransition from "../components/PageTransition";
+import FollowerComponent from "../components/Follower";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 import { AppProps } from "next/app";
+import "@/styles/globals.scss";
+import { Container } from "react-bootstrap";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <>
+    <div className="d-flex w-100 h-100 p-3 mx-auto flex-column">
       <FollowerComponent />
       <Header />
       <main>
@@ -21,7 +24,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         </Container>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 

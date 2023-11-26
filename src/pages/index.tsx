@@ -10,20 +10,18 @@ export default function Home() {
         <meta name="description" content="portafolio" />
         <title>Portafolio</title>
       </Head>
-      <main>
-        <h1>Bienvenido</h1>
-        <p className="lead">
-          Bienvenido a mi página web de portafolio. Aquí podrás explorar mi
-          trabajo en el desarrollo de herramientas para simplificar el trabajo
-          de las personas. Me especializo en la creación de aplicaciones con
-          flutter y desarrollo web, y próximamente en el campo de la blockchain.
-        </p>
-        <p className="lead">
-          <Link href="/proyectos">
-            <CustomButton>Proyectos</CustomButton>
-          </Link>
-        </p>
-      </main>
+      <h1>Bienvenido</h1>
+      <p className="lead">
+        Bienvenido a mi página web de portafolio. Aquí podrás explorar mi
+        trabajo en el desarrollo de herramientas para simplificar el trabajo de
+        las personas. Me especializo en la creación de aplicaciones con flutter
+        y desarrollo web, y próximamente en el campo de la blockchain.
+      </p>
+      <p className="lead">
+        <Link href="/proyectos">
+          <CustomButton>Proyectos</CustomButton>
+        </Link>
+      </p>
     </>
   );
 }

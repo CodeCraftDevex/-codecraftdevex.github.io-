@@ -3,8 +3,8 @@ import Link from "next/link";
 import styles from "./Header.module.scss";
 function Header() {
   return (
-    <header className={styles.mbAuto}>
-      <Navbar bg="transparent" expand="lg" className={styles.navMasthead}>
+    <header className="mb-auto">
+      <Navbar bg="transparent" expand="lg" className="nav-masthead">
         <Container>
           <Link href="/">
             <Navbar.Brand
@@ -16,6 +16,27 @@ function Header() {
               </span>
               <span className={styles.letterAnimation + " " + styles.letter2}>
                 o
+              </span>
+              <span className={styles.letterAnimation + " " + styles.letter3}>
+                r
+              </span>
+              <span className={styles.letterAnimation + " " + styles.letter4}>
+                t
+              </span>
+              <span className={styles.letterAnimation + " " + styles.letter5}>
+                a
+              </span>
+              <span className={styles.letterAnimation + " " + styles.letter6}>
+                f
+              </span>
+              <span className={styles.letterAnimation + " " + styles.letter7}>
+                o
+              </span>
+              <span className={styles.letterAnimation + " " + styles.letter8}>
+                l
+              </span>
+              <span className={styles.letterAnimation + " " + styles.letter9}>
+                i
               </span>
               <span className={styles.letterAnimation + " " + styles.letter10}>
                 o
@@ -29,21 +50,11 @@ function Header() {
           />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Link href="/proyectos" passHref>
-                {/* <a
-                  className={styles.navLink + " fw-bold py-1 px-0"}
-                  style={{ cursor: "none" }}
-                > */}
+              <Link href="/proyectos" className="nav-link fw-bold py-1 px-0">
                 Proyectos
-                {/* </a> */}
               </Link>
-              <Link href="/contacto" passHref>
-                {/* <a
-                  className={styles.navLink + " fw-bold py-1 px-0"}
-                  style={{ cursor: "none" }}
-                > */}
+              <Link href="/contacto" className="nav-link fw-bold py-1 px-0">
                 Contacto
-                {/* </a> */}
               </Link>
             </Nav>
           </Navbar.Collapse>
