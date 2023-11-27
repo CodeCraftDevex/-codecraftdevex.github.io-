@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-// Función de throttling con anotaciones TypeScript, movida fuera del componente.
+
+// Definición de la función throttle fuera del componente
 const throttle = <T extends (...args: any[]) => any>(
   func: (this: unknown, ...args: Parameters<T>) => ReturnType<T>,
   limit: number
@@ -31,19 +32,22 @@ const CustomCursor: React.FC = () => {
     y: number;
   }>({ x: 0, y: 0 });
 
+  // Función para manejar el movimiento del ratón, envuelta en throttle
   const handleMouseMove = useCallback(
     throttle((e: MouseEvent) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
-    }, 10), // Actualizar una vez cada 100ms
-    [] // Dependencias vacías, por lo que la función no se recreará
+    }, 10),
+    [] // No hay dependencias dinámicas
   );
 
   useEffect(() => {
+    // Añadir el event listener usando la versión "throttled" de la función
     document.addEventListener("mousemove", handleMouseMove);
     return () => {
+      // Asegurarse de limpiar el event listener
       document.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [handleMouseMove]); // Añadido handleMouseMove como dependencia
+  }, [handleMouseMove]); // handleMouseMove es ahora estable
 
   return (
     <div

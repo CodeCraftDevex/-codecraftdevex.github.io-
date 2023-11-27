@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Nav, Image } from "react-bootstrap";
-import { projectsContent, projectsLogo } from "./listado_proyectos";
+import { projectsContent, projectsLogo } from "../data/listado_proyectos";
 import PDFIntercalator from "./PDFIntercalator";
 import useWindowSize from "../hooks/useWindowSize";
-import styles from "./Proyectos.module.scss";
+import styles from "./proyectos.module.scss";
 
 const Sidebar: React.FC = () => {
   const [selectedProjectId, setSelectedProjectId] = useState<string | null>(
@@ -18,22 +18,22 @@ const Sidebar: React.FC = () => {
     <Nav className={styles.sidebar + " flex-column"}>
       {projectsLogo.map((project) => (
         <Nav.Link
+          className={styles.navLink}
           href={`#${project.id}`}
           key={project.id}
           onClick={() => handleProjectClick(project.id)}
         >
           <Image
-            src={project.image}
+            src={project.image.src}
             alt={project.title}
             fluid
             className={`${styles.projectImage} ${
-              selectedProjectId === project.id
-                ? styles.projectImageSelected
-                : ""
+              selectedProjectId === project.id ? styles.selected : ""
             }`}
             draggable="false"
           />
-          {selectedProjectId === project.id && (
+
+          {/* {selectedProjectId === project.id && (
             <h3
               className={`${styles.projectTitle} ${
                 selectedProjectId === project.id
@@ -43,7 +43,7 @@ const Sidebar: React.FC = () => {
             >
               {project.title}
             </h3>
-          )}
+          )} */}
         </Nav.Link>
       ))}
     </Nav>
@@ -64,22 +64,24 @@ const Proyectos: React.FC = () => {
             </Col>
           )}
           <Col md={isMobile ? 12 : 10}>
-            <Row className="proyecto" id="pdfIntercalator">
+            <Row id="pdfIntercalator">
               <Col md={12}>
                 <PDFIntercalator />
               </Col>
-              <hr className={styles.proyectoDivider} />
+              <hr className={styles.projectDivider} />
             </Row>
             {projectsContent.map((project) => (
-              <Row className="proyecto" id={project.id} key={project.id}>
+              <Row id={project.id} key={project.id}>
                 <Col md={7}>
-                  <h2 className="fw-normal lh-1">{project.title}</h2>
+                  <h2 className={styles.projectHeading + " fw-normal lh-1"}>
+                    {project.title}
+                  </h2>
                   <p className="lead">{project.description}</p>
                 </Col>
                 <Col md={5}>
-                  <Image src={project.image} alt={project.title} fluid />
+                  <Image src={project.image.src} alt={project.title} fluid />
                 </Col>
-                <hr className={styles.proyectoDivider} />
+                <hr className={styles.projectDivider} />
               </Row>
             ))}
           </Col>

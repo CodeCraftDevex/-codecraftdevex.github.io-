@@ -1,4 +1,3 @@
-// projects.ts
 import intercaladoLogo from "../assets/logos/intercalado/logo_intercalado.svg";
 import potplotLogo from "../assets/logos/potplot/potplot.svg";
 import bcaaLogo from "../assets/logos/bcaa/logo_bcaa.svg";
@@ -6,10 +5,11 @@ import puenteLogo from "../assets/logos/puente/logo_puente.svg";
 import calendario from "../assets/images/calendario.png";
 import huerto from "../assets/images/huerto.jpeg";
 import bcaa from "../assets/images/bcaa.jpeg";
+import { StaticImageData } from "next/image";
 
 interface Project {
   id: string;
-  image: string;
+  image: StaticImageData;
   title: string;
   description: string;
 }

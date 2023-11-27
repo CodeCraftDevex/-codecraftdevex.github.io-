@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./Follower.module.scss";
+import styles from "./follower.module.scss";
 
 interface MousePosition {
   x: number;

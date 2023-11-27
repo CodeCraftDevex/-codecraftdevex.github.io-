@@ -1,6 +1,6 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 import Link from "next/link";
-import styles from "./Header.module.scss";
+import styles from "./header.module.scss";
 function Header() {
   return (
     <header className="mb-auto">

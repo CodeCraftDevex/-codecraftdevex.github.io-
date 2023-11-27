@@ -16,7 +16,7 @@ const pageVariants = {
 const pageTransition = {
   type: "tween",
   ease: "linear",
-  duration: 2,
+  duration: 1,
 };
 
 interface PageTransitionProps {
