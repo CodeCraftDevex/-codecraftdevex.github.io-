@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { PDFDocument, degrees } from "pdf-lib";
 import { useDropzone } from "react-dropzone";
-import CustomButton from "../components/CustomButton";
+import CustomButton from "./CustomButton";
 import { FaRegClone } from "react-icons/fa";
 import { FaArrowsRotate } from "react-icons/fa6";
 import { Container, Col, Row } from "react-bootstrap";

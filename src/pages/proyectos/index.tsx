@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Nav, Image } from "react-bootstrap";
-import { projectsContent, projectsLogo } from "../data/listado_proyectos";
-import PDFIntercalator from "./PDFIntercalator";
-import useWindowSize from "../hooks/useWindowSize";
+import { projectsContent, projectsLogo } from "../../data/listado_proyectos";
+import PDFIntercalator from "../../components/PDFIntercalator";
+import useWindowSize from "../../hooks/useWindowSize";
 import styles from "./proyectos.module.scss";
 
 const Sidebar: React.FC = () => {
