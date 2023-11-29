@@ -32,22 +32,25 @@ const CustomCursor: React.FC = () => {
     y: number;
   }>({ x: 0, y: 0 });
 
-  // Función para manejar el movimiento del ratón, envuelta en throttle
-  const handleMouseMove = useCallback(
-    throttle((e: MouseEvent) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
-    }, 10),
-    [] // No hay dependencias dinámicas
+  // Define una función para actualizar la posición del cursor
+  const updateCursorPosition = (e: MouseEvent) => {
+    setCursorPosition({ x: e.clientX, y: e.clientY });
+  };
+
+  // Envuelve la función de actualización con throttle
+  const throttledUpdateCursorPosition = useCallback(
+    throttle(updateCursorPosition, 10),
+    []
   );
 
   useEffect(() => {
     // Añadir el event listener usando la versión "throttled" de la función
-    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("mousemove", throttledUpdateCursorPosition);
     return () => {
       // Asegurarse de limpiar el event listener
-      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("mousemove", throttledUpdateCursorPosition);
     };
-  }, [handleMouseMove]); // handleMouseMove es ahora estable
+  }, [throttledUpdateCursorPosition]); // Depende de la versión memorizada de la función
 
   return (
     <div
