@@ -105,7 +105,7 @@ const PDFIntercalator = () => {
           <div>
             <h4>Intercalador de Páginas</h4>
             <p className="small">
-              Esta herramienta es ideal para quienes necesitan escanear
+              Herramienta ideal para quienes necesitan escanear
               documentos por una sola cara. Permite juntar y rotar archivos PDF
               escaneados de manera sencilla.
               <span className="font-weight-bold text-primary">

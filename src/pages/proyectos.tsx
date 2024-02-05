@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Container, Row, Col, Nav, Image } from "react-bootstrap";
 import { projectsContent, projectsLogo } from "../data/listado_proyectos";
 import PDFIntercalator from "../components/PDFIntercalator";
+import TaxBaseCalculation from "../components/TaxBaseCalculation";
 import useWindowSize from "../hooks/useWindowSize";
 import styles from "./proyectos.module.scss";
 
@@ -64,6 +65,12 @@ const Proyectos: React.FC = () => {
             </Col>
           )}
           <Col md={isMobile ? 12 : 10}>
+            <Row id="taxBaseCalculation">
+              <Col md={12}>
+                <TaxBaseCalculation />
+              </Col>
+              <hr className={styles.projectDivider} />
+            </Row>
             <Row id="pdfIntercalator">
               <Col md={12}>
                 <PDFIntercalator />

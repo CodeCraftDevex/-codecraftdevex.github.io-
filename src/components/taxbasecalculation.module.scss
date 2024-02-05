@@ -1,0 +1,7 @@
+.tableCustom {
+    th:first-child, td:first-child {
+      width: 10%; // Hace la primera columna más angosta
+      text-transform: capitalize; // Capitaliza el contenido
+    }
+  }
+  
