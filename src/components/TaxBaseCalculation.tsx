@@ -4,8 +4,8 @@ import { Container, Spinner, Table, Accordion } from "react-bootstrap";
 import styles from "./taxbasecalculation.module.scss";
 import CustomButton from "./CustomButton";
 
-import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
-import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+// import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
+// import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 type Resultado = {
   tiempos: {
@@ -28,10 +28,7 @@ type Resultado = {
     baseImponible?: number;
   };
 };
-const codeString = `# Tu código Python aquí
-def ejemplo():
-    print("Hola, mundo!")
-`;
+
 const TaxBaseCalculation = () => {
   const [resultado, setResultado] = useState<{
     resultadoPandas: Resultado;
@@ -73,11 +70,7 @@ const TaxBaseCalculation = () => {
             <Accordion>
               <Accordion.Item eventKey={key}>
                 <Accordion.Header>{value.toFixed(4)}</Accordion.Header>
-                <Accordion.Body>
-                  <SyntaxHighlighter language="python" style={atomOneDark}>
-                    {codeString}
-                  </SyntaxHighlighter>
-                </Accordion.Body>
+                <Accordion.Body>&nbsp;</Accordion.Body>
               </Accordion.Item>
             </Accordion>
           </td>
