@@ -3,17 +3,21 @@ import axios from "axios";
 import { Container, Spinner, Table, Accordion } from "react-bootstrap";
 import styles from "./taxbasecalculation.module.scss";
 import CustomButton from "./CustomButton";
-
-// import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
-// import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-
+import GistLoader from "./GistLoader";
 type Resultado = {
   tiempos: {
-    consolidarYProcesarPorFecha: number;
-    encadenarTransacciones: number;
-    convertirTransaccionesAEur: number;
-    calcularBaseImponible: number;
+    consolidar_y_procesar_por_fecha: number;
+    encadenar_transacciones: number;
+    convertir_transacciones_a_eur: number;
+    calcular_base_imponible: number;
     total: number;
+  };
+  codigos: {
+    consolidar_y_procesar_por_fecha: string;
+    encadenar_transacciones: string;
+    convertir_transacciones_a_eur: string;
+    calcular_base_imponible: string;
+    total: string;
   };
   totales: {
     profitTotal?: number;
@@ -41,7 +45,6 @@ const TaxBaseCalculation = () => {
     const url = `${process.env.NEXT_PUBLIC_RESTFUL_SERVER_URL}/base_imponible/calculo-base-imponible/`;
     try {
       const response = await axios.get(url);
-      // setResultado(response.data);
       setResultado({
         resultadoPandas: response.data.resultado_pandas,
         resultadoConvencional: response.data.resultado_convencional,
@@ -53,40 +56,46 @@ const TaxBaseCalculation = () => {
     }
   };
 
-  const generateTableRows = (resultado: {
+  const generateTableRows = ({
+    resultadoPandas,
+    resultadoConvencional,
+  }: {
     resultadoPandas: Resultado;
     resultadoConvencional: Resultado;
   }) => {
     const rows = [];
-    // Tiempos
-    const entries = Object.entries(resultado.resultadoPandas.tiempos);
+    const entriesPandas = Object.entries(resultadoPandas.tiempos).slice(0, -1);
+    const codigosPandas = Object.entries(resultadoPandas.codigos);
+    const entriesConvencional = Object.entries(resultadoConvencional.tiempos);
+    const codigosConvencional = Object.entries(resultadoConvencional.codigos);
 
-    for (const [key, value] of entries.slice(0, -1)) {
-      const readableKey = key.replace(/_/g, " ");
+    for (let i = 0; i < entriesPandas.length; i++) {
+      const [keyPandas, valuePandas] = entriesPandas[i];
+      const [keyConvencional, valueConvencional] = entriesConvencional[i];
+
+      const readableKey = keyPandas.replace(/_/g, " ");
+
       rows.push(
-        <tr key={key}>
+        <tr key={keyPandas}>
           <td className={styles.firstColumn}>{readableKey}</td>
           <td>
             <Accordion>
-              <Accordion.Item eventKey={key}>
-                <Accordion.Header>{value.toFixed(4)}</Accordion.Header>
-                <Accordion.Body>&nbsp;</Accordion.Body>
+              <Accordion.Item eventKey={`pandas-${keyPandas}`}>
+                <Accordion.Header>{valuePandas.toFixed(4)}</Accordion.Header>
+                <Accordion.Body>
+                  <GistLoader gistId={codigosPandas[i][1]} />
+                </Accordion.Body>
               </Accordion.Item>
             </Accordion>
           </td>
           <td>
             <Accordion>
-              <Accordion.Item eventKey={key}>
-                <Accordion.Header>{value.toFixed(4)}</Accordion.Header>
+              <Accordion.Item eventKey={`convencional-${keyConvencional}`}>
+                <Accordion.Header>
+                  {valueConvencional.toFixed(4)}
+                </Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  <GistLoader gistId={codigosConvencional[i][1]} />
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>
@@ -94,7 +103,6 @@ const TaxBaseCalculation = () => {
         </tr>
       );
     }
-
     return rows;
   };
 
